@@ -17,11 +17,16 @@ EduSync is a Unified Student Collaboration Hub designed to connect students and 
 - **Database:** MongoDB
 - **Design:** Figma
 
+## Author
+- **Kumar Anand**
+- **Nilkamal Priydarshi**
+
+
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/edusync.git
+   git clonehttps://github.com/benil09/edusync.git
    ```
 
 2. Navigate to the project directory:
