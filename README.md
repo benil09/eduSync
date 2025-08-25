@@ -1,6 +1,6 @@
-# EduSync
+# EduConnect
 
-EduSync is a Unified Student Collaboration Hub designed to connect students and faculty within an academic institution. The platform provides a space to share resources, collaborate on projects, and communicate effectively.
+EduConnect is a Unified Student Collaboration Hub designed to connect students and faculty within an academic institution. The platform provides a space to share resources, collaborate on projects, and communicate effectively.
 
 ## Features
 
