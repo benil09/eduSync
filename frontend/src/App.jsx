@@ -5,8 +5,17 @@ import Home from './Pages/Home.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import Navbar from './Components/Navbar.jsx';
 import SignupPage2 from './Pages/SignupPage2.jsx';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    useEffect(() => {
+    document.documentElement.classList.remove("theme-light", "theme-dark");
+    document.documentElement.classList.add(`theme-${theme}`);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
      <>
