@@ -1,9 +1,10 @@
 {
     "firstName":"Nil",
     "lastName":"Kamal",
+    "email":"abcdgmail.com",
     "username":"nil09",
     "branch":"ECE",
     "year":"3rd",
-    "role":"Student",
+    "role":"student",
     "password":"123456"
 }
