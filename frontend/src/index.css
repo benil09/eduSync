@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
-@layer theme {
+@layer base {
   :root {
     /* Light theme values */
-    --color-background-light: #F9FAFB;
-    --color-text1-light: #111827;
-    --color-text2-light: #6B7280;
-    --color-primary-light: #7C3AED;
-    --color-hover-light: #6D28D9;
-    --color-secondary-light: #10B981;
-    --color-accent-light: #FF6900; /* Amber-500 */
+--color-background-light: #F9FAFB; 
+--color-text1-light: #000000;       
+--color-text2-light: #4B5563;     
+--color-primary-light: #Ff6900;      
+--color-hover-light: #f44900;        
+--color-secondary-light: #Ebe9e9;   
+--color-accent-light: #ffffff;       
 
     /* Dark theme values */
-    --color-background-dark: #1E1E2F;
-    --color-text1-dark: #F9FAFB;
-    --color-text2-dark: #9CA3AF;
-    --color-primary-dark: #bb86fc;
-    --color-hover-dark: #9b6fef;
-    --color-secondary-dark: #34D399;
-    --color-accent-dark: #fbbf24; /* Amber-400 */
+--color-background-dark: #1F2937;    /* gray-800 */
+--color-text1-dark: #F9FAFB;         /* gray-50 */
+--color-text2-dark: #9CA3AF;         /* gray-400 */
+--color-primary-dark: #F97316;       /* orange-500 */
+--color-hover-dark: #FB923C;         /* orange-400 (lighter hover) */
+--color-secondary-dark: #374151;     /* gray-700 */
+--color-accent-dark: #D1D5DB;        /* gray-300 */
   }
 
   .theme-light {
@@ -43,35 +43,14 @@
 }
 
 @layer utilities {
-  .bg-theme {
-    background-color: var(--color-background);
-  }
-
-  .text-theme-1 {
-    color: var(--color-text1);
-  }
-
-  .text-theme-2 {
-    color: var(--color-text2);
-  }
-
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-
-  .hover\:bg-hover:hover {
-    background-color: var(--color-hover);
-  }
-
-  .bg-secondary {
-    background-color: var(--color-secondary);
-  }
-
-  .bg-accent {
-    background-color: var(--color-accent);
-  }
-
-  .text-accent {
-    color: var(--color-accent);
-  }
+  .bg-theme { background-color: var(--color-background); }
+  .text-theme-1 { color: var(--color-text1); }
+  .text-theme-2 { color: var(--color-text2); }
+  .text-primary { color: var(--color-primary); }
+  .text-hover { color: var(--color-hover); }
+  .bg-primary { background-color: var(--color-primary); }
+  .hover\:bg-hover:hover { background-color: var(--color-hover); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-accent { background-color: var(--color-accent); }
+  .text-accent { color: var(--color-accent); }
 }
