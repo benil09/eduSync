@@ -11,7 +11,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Middle: Nav buttons */}
-                    <nav className="flex-1 flex justify-center  space-x-6 ">
+                    <nav className="hidden md:flex flex-1 justify-center space-x-6 ">
                         <button className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm">
                             Courses
                         </button>
@@ -24,8 +24,7 @@ export default function Navbar() {
                     </nav>
 
                     {/* Right: Auth */}
-                    <div className="flex items-center space-x-3">
-                      
+                    <div className="flex items-center space-x-3 ml-auto">
                         <Link to="/login" className="bg-orange-500  font-bold text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600">
                             Log in
                         </Link>

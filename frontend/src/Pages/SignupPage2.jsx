@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
-const SignupPage = () => {
+const SignupPage2 = () => {
   return (
     <div className="flex h-screen">
       {/* Left Section */}
@@ -13,42 +13,45 @@ const SignupPage = () => {
           </h2>
           <form className="space-y-4">
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-              <input
-                type="text"
-                placeholder="First Name"
-                required
-                className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                required
-                className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
-              />
+              <select id="options" name="options" required placeholder="Role" className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400">
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+              </select>
+              <select id="options" name="options" required className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400">
+                <option value="" disabled selected>--Select Course--</option>
+                <option value="btech">B. Tech</option>
+                <option value="mtech">M. Tech</option>
+                <option value="phd">Phd</option>
+              </select>
+              <select id="options" name="options" required className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400">
+                <option value="" disabled selected>--Select Year--</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">Pass Out</option>
+              </select>
+              <select id="options" name="options" required className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400">
+                <option value="" disabled selected>--Select Branch--</option>
+                <option value="cse">CSE</option>
+                <option value="dsai">CSE (DSAI)</option>
+                <option value="ece">ECE</option>
+                <option value="iot">ECE (IOT)</option>
+                <option value="mc">Mathematics & Computation</option>
+              </select>
 
             </div>
             <input
-              type="mail"
-              placeholder="Email"
+              type="text"
+              placeholder="Set Username"
               required
               className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
             />
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
-            />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              required
-              className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
-            />
-            <button type='submit' className="w-full py-3 bg-orange-500 rounded-full text-white  font-semibold hover:bg-orange-600 transition duration-200 cursor-pointer flex justify-center">
-            <Link to="/signup2" >
-              Next
-            </Link>
+            <button
+              type="submit"
+              className="w-full py-3 bg-orange-500 rounded-full text-white  font-semibold hover:bg-orange-600 transition duration-200 cursor-pointer"
+            >
+              Submit
             </button>
           </form>
 
@@ -98,4 +101,4 @@ const SignupPage = () => {
   )
 }
 
-export default SignupPage
+export default SignupPage2;
