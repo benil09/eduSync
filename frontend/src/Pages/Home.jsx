@@ -16,6 +16,7 @@ function Home() {
         </div>
 
         <p className="mt-2 text-accent font-medium">This text is accent colored</p>
+        <h1 className='text-accent'>Hello</h1>
       </div>
     </div>
   )

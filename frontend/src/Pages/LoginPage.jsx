@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+import React from 'react'
 const LoginPage = () => {
   return (
     <div className="flex h-screen">
@@ -5,12 +7,12 @@ const LoginPage = () => {
       <div className="w-full md:w-1/2  flex items-center justify-center p-6 bg-gray-50">
         <div className="w-full max-w-md space-y-6">
           <h2 className="text-2xl font-bold text-center text-gray-800">
-            Login to <span className="text-orange-500">eduConnect</span>
+            Login to edu<span className="text-orange-500">Connect</span>
           </h2>
           <form className="space-y-4">
             <input
-              type="text"
-              placeholder="Registration Number"
+              type="mail"
+              placeholder="Enter Email or Username"
               className="w-full px-4 py-3 bg-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-orange-400"
             />
             <input
@@ -27,13 +29,13 @@ const LoginPage = () => {
           </form>
 
           <div className="flex justify-between text-sm text-gray-600">
-            <a href="#" className="hover:underline">
+            <Link to="/signup" className="text-[12px] md:text-sm hover:underline">
               Forgot Password?
-            </a>
-            <a href="#" className="hover:underline">
+            </Link>
+            <Link to="/signup" className="text-[12px] md:text-sm hover:underline">
               Don’t have an account?{" "}
               <span className="text-orange-500">Signup</span>
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center justify-center">
