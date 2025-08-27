@@ -1,0 +1,9 @@
+{
+    "firstName":"Nil",
+    "lastName":"Kamal",
+    "username":"nil09",
+    "branch":"ECE",
+    "year":"3rd",
+    "role":"Student",
+    "password":"123456"
+}

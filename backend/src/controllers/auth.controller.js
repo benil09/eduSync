@@ -1,23 +1,48 @@
-import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
+import {redis} from "../config/redis.config.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
 
 export const generateToken = (user) => {
-  
-}
+  const refreshToken = jwt.sign({ id: user._id }, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: "7d",
+  });
+  const accessToken = jwt.sign({ id: user._id }, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: "15m",
+  });
+  return { refreshToken, accessToken };
+};
 
-export const refreshToken = async (req,res)=>{
+export const storeRefreshToken = async (userId, refreshToken) => {
+  redis.set(`refreshToken:${userId}`, refreshToken, "EX", 60 * 60 * 24 * 7);
+};
 
-}
+export const setCookie = (res,refreshToken, accessToken) => {
+  res.cookie("accessToken", accessToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60 * 24 * 7 * 1000,
+  });
 
-export const setCookie = (res, token) => {
+  res.cookie("refreshToken", refreshToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60 * 24 * 7 * 1000,
+  });
+};
 
-}
 
-
+// ✅ done
 export const signup = async (req, res) => {
   try {
-    const { email, username, firstName, lastName, password, year, branch } =
+    const { email, username, firstName,role, lastName, password, year, branch } =
       req.body;
     if (
       !email ||
@@ -26,8 +51,8 @@ export const signup = async (req, res) => {
       !lastName ||
       !password ||
       !year ||
-      !branch
-    ) {
+      !branch)
+       {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -42,11 +67,33 @@ export const signup = async (req, res) => {
     const user = new User({
       username,
       email,
+      firstName,
+      lastName,
+      role,
+      year,
+      branch,
       password: hashedPassword,
     });
     await user.save();
 
-    res.status(201).json({ message: "User created successfully" });
+    //Authentication
+    const { refreshToken, accessToken } = generateToken(user);
+    await storeRefreshToken(user._id, refreshToken);
+    setCookie(res, accessToken, refreshToken);
+
+    res.status(201).json({
+      message: "User created successfully",
+      user: {
+        id: user._id,
+        email: user.email,
+        username: user.username,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        year: user.year,
+        role,
+        branch: user.branch,
+      },
+    });
   } catch (error) {
     console.log("Error in signup controller", error.message);
     res.status(500).json({ message: "Internal Server Error" });

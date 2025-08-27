@@ -8,22 +8,22 @@ const userSchema = new schema({
     required: true,
     unique: true,
   },
-  username:{
-    type:String,
-    required:true,
-    unique:true
+  username: {
+    type: String,
+    required: true,
+    unique: true,
   },
   firstName: {
     type: String,
     required: true,
   },
-  branch:{
-    type:String,
-    required:true
+  branch: {
+    type: String,
+    required: true,
   },
-  year:{
-    type:String,
-    required:true
+  year: {
+    type: String,
+    required: true,
   },
   lastName: {
     type: String,
@@ -32,18 +32,13 @@ const userSchema = new schema({
   password: {
     type: String,
     required: true,
+    minlength: [6, "Password must be at least 6 characters"],
   },
-  role:{
-    type:String,
-    enum:["student","faculty"],
-    default:"student",
-
+  role: {
+    type: String,
+    enum: ["student", "faculty"],
+    default: "student",
   },
-  clerkID:{
-    type:String,
-    required:true,
-    unique:true
-  }
 });
 
 const User = mongoose.model("User", userSchema);
