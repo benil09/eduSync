@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ThemeToggle from '../Components/ThemeToggle'
+
 
 export default function Navbar() {
     return (
@@ -7,7 +9,9 @@ export default function Navbar() {
                 <div className="flex items-center h-16">
                     {/* Left: Logo */}
                     <div className="flex-shrink-0">
-                        <div className="text-2xl font-bold ">edu<span className="text-orange-500">Connect</span> </div>
+                        <Link to="/" className="text-2xl font-bold">
+                            edu<span className="text-orange-500">Connect</span>
+                        </Link>
                     </div>
 
                     {/* Middle: Nav buttons */}
@@ -28,6 +32,7 @@ export default function Navbar() {
                         <Link to="/login" className="bg-orange-500  font-bold text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600">
                             Log in
                         </Link>
+                        <ThemeToggle/>
                     </div>
                 </div>
             </div>

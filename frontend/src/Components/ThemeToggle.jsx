@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Sun,Moon} from "lucide-react"
 
 export default function ThemeToggle() {
   // Load saved theme or default to light
@@ -19,9 +20,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="px-4 py-2 rounded bg-primary text-theme-1 hover:bg-hover transition"
+      className="px-2 py-2 rounded-full border text-theme-1 cursor-pointer transition"
     >
-      {theme === "light" ? "☀️" : "🌙"}
+      {theme === "light" ? <Sun size={20} /> :<Moon size={20} />}
     </button>
   );
 }

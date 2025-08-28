@@ -6,6 +6,7 @@ import LoginPage from './Pages/LoginPage.jsx';
 import Navbar from './Components/Navbar.jsx';
 import SignupPage2 from './Pages/SignupPage2.jsx';
 import { useEffect, useState } from 'react';
+import Footer from './Components/Footer.jsx';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/' element={<Home/>}/>
       </Routes>
+      <Footer/>
      </>
   );
 }

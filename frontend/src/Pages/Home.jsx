@@ -3,21 +3,42 @@ import ThemeToggle from '../Components/ThemeToggle'
 
 function Home() {
   return (
-    <div className='min-h-screen bg-theme text-theme-1 transition-colors duration-300 flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 gap-12 '>
-      <h1 className='text-4xl font-bold'>This is Basic react setup</h1>
-      <p>Here I have set-up Vite using JS, Tailwind, React-icons, React-router-dom</p>
-      <ThemeToggle />
-      <div className="p-4 rounded text-theme-1">
-        <h2 className="text-2xl font-bold">Theme Accent Example</h2>
-        <p className="text-theme-2 mt-1">The following block uses the accent color:</p>
+    <div className="min-h-screen bg-theme text-theme-1 transition-colors duration-300 flex flex-col">
+      
 
-        <div className="mt-4 p-4 rounded bg-accent hover:bg-hover text-white">
-          Accent Highlight
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center px-6 py-20  text-theme-1">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6">Welcome to EduConnect</h2>
+        <p className="max-w-2xl text-lg mb-8">
+          A unified student collaboration hub where you can share resources, connect with peers, 
+          and stay updated with college activities.
+        </p>
+        <div className="flex gap-4">
+          <a href="/signup" className="px-6 py-3 bg-primary text-accent font-semibold rounded-lg shadow-md hover:bg-hover transition">Get Started</a>
+          <a href="/login" className="px-6 py-3 border border-theme-1 text-theme-1 font-semibold rounded-lg hover:bg-secondary hover:text-accent transition">Login</a>
         </div>
+      </section>
 
-        <p className="mt-2 text-accent font-medium">This text is accent colored</p>
-        <h1 className='text-accent'>Hello</h1>
-      </div>
+      {/* Features Section */}
+      <section className="px-6 py-16 flex flex-col items-center gap-12">
+        <h3 className="text-3xl font-bold text-theme-1">Why EduConnect?</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl">
+          <div className="p-6 bg-secondary rounded-lg shadow-md hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-2 text-theme-1">📚 Resource Sharing</h4>
+            <p className="text-theme-2">Upload and access notes, assignments, and previous year papers easily.</p>
+          </div>
+          <div className="p-6 bg-secondary rounded-lg shadow-md hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-2 text-theme-1">💬 Community</h4>
+            <p className="text-theme-2">Engage with peers, share experiences, and collaborate on projects.</p>
+          </div>
+          <div className="p-6 bg-secondary rounded-lg shadow-md hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-2 text-theme-1">📢 Announcements</h4>
+            <p className="text-theme-2">Stay updated with important college news and deadlines in real-time.</p>
+          </div>
+        </div>
+      </section>
+
+     
     </div>
   )
 }

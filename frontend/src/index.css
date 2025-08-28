@@ -13,8 +13,8 @@
 
     /* Dark theme values */
 --color-background-dark: #1F2937;    /* gray-800 */
---color-text1-dark: #F9FAFB;         /* gray-50 */
---color-text2-dark: #9CA3AF;         /* gray-400 */
+--color-text1-dark: #a6b0ba;         /* gray-50 */
+--color-text2-dark: #c6c7c9;         /* gray-400 */
 --color-primary-dark: #F97316;       /* orange-500 */
 --color-hover-dark: #FB923C;         /* orange-400 (lighter hover) */
 --color-secondary-dark: #374151;     /* gray-700 */
